@@ -1,0 +1,10 @@
+Model,Accuracy,Precision,Recall,F1-Score,ROC-AUC
+Baseline (Majority),0.734,0.0,0.0,0.0,0.5
+LogReg (No Imbalance),0.804,0.648,0.572,0.608,0.836
+RandomForest (No Imbalance),0.783,0.616,0.484,0.542,0.812
+LogReg (Class Weight),0.726,0.49,0.797,0.607,0.835
+RandomForest (Class Weight),0.782,0.616,0.476,0.537,0.813
+LogReg (SMOTE Correct),0.732,0.497,0.778,0.607,0.833
+RandomForest (SMOTE Correct),0.771,0.57,0.57,0.57,0.81
+LogReg (SMOTE LEAKY),0.788,0.768,0.825,0.796,0.864
+RandomForest (SMOTE LEAKY),0.861,0.868,0.852,0.86,0.931

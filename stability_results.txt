@@ -1,0 +1,8 @@
+SHAP Stability Results (3 seeds)
+---------------------------------
+Logistic Regression Stability (Mean Spearman): 1.000
+Random Forest Stability (Mean Spearman): 1.000
+
+Cross-Model Consistency:
+Spearman Rank Correlation: 0.585
+Top-10 Overlap: 7 out of 10 features

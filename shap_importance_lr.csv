@@ -1,0 +1,46 @@
+,0
+num__tenure,1.1251197229761558
+num__MonthlyCharges,0.5295666118975735
+num__TotalCharges,0.4664626583721387
+cat__Contract_Month-to-month,0.33633931385144167
+cat__InternetService_Fiber optic,0.32051293205988535
+cat__Contract_Two year,0.27698600266462475
+cat__InternetService_DSL,0.27298342887520544
+cat__MultipleLines_No,0.11836476303641576
+cat__StreamingTV_Yes,0.1153118778500335
+cat__StreamingMovies_Yes,0.11359481377542194
+cat__PaymentMethod_Electronic check,0.11012195390672096
+cat__PaperlessBilling_No,0.10684632743048636
+cat__OnlineSecurity_No,0.09973332061074108
+cat__TechSupport_No,0.08885093788623888
+cat__StreamingTV_No internet service,0.08874414206002915
+cat__StreamingMovies_No internet service,0.08874414206002915
+cat__InternetService_No,0.08874414206002915
+cat__DeviceProtection_No internet service,0.08874414206002915
+cat__TechSupport_No internet service,0.08874414206002915
+cat__OnlineSecurity_No internet service,0.08874414206002915
+cat__OnlineBackup_No internet service,0.08874414206002915
+cat__StreamingTV_No,0.08793076556435553
+cat__StreamingMovies_No,0.08367797897131299
+cat__Dependents_Yes,0.08213954717967317
+num__SeniorCitizen,0.05912608463826964
+cat__MultipleLines_Yes,0.05769259701307252
+cat__Partner_Yes,0.056084998092091706
+cat__PaymentMethod_Bank transfer (automatic),0.05381970298412729
+cat__OnlineSecurity_Yes,0.0496466099929992
+cat__gender_Male,0.04880983724317107
+cat__gender_Female,0.042806603607863924
+cat__PaymentMethod_Mailed check,0.0413998879455949
+cat__TechSupport_Yes,0.04042033332486768
+cat__OnlineBackup_No,0.03925744054521468
+cat__PaymentMethod_Credit card (automatic),0.0365361910613067
+cat__Partner_No,0.03597503430599578
+cat__DeviceProtection_Yes,0.03570533717955016
+cat__Contract_One year,0.029666565103245588
+cat__PhoneService_Yes,0.020350810406599265
+cat__PaperlessBilling_Yes,0.016708525069622743
+cat__PhoneService_No,0.012622827924227208
+cat__MultipleLines_No phone service,0.012622827924227208
+cat__Dependents_No,0.008355486520103025
+cat__DeviceProtection_No,0.005597081677433866
+cat__OnlineBackup_Yes,0.003509264589504785

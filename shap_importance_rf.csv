@@ -1,0 +1,46 @@
+,0
+num__tenure,0.06413928204088129
+cat__Contract_Month-to-month,0.06330375457600229
+num__TotalCharges,0.048330781841024496
+num__MonthlyCharges,0.038646915625239975
+cat__InternetService_Fiber optic,0.03444572011656007
+cat__Contract_Two year,0.03280939333784646
+cat__OnlineSecurity_No,0.030149861503174898
+cat__TechSupport_No,0.026454897223448737
+cat__PaymentMethod_Electronic check,0.025452304602257163
+cat__InternetService_DSL,0.01969994230584555
+cat__OnlineBackup_No,0.013082434992572386
+cat__Contract_One year,0.010250115368181783
+cat__TechSupport_Yes,0.009390797951491229
+cat__PaperlessBilling_No,0.009322275334788965
+cat__OnlineSecurity_Yes,0.009068306635972417
+num__SeniorCitizen,0.008615733828556857
+cat__PaperlessBilling_Yes,0.008510970210787948
+cat__StreamingTV_Yes,0.007778906106986664
+cat__MultipleLines_No,0.00768215507697753
+cat__MultipleLines_Yes,0.007324182838825125
+cat__gender_Female,0.006845273623503952
+cat__gender_Male,0.006778824357003714
+cat__StreamingMovies_Yes,0.00675882187503771
+cat__OnlineBackup_Yes,0.006740838357722148
+cat__Dependents_Yes,0.006460830197843804
+cat__Dependents_No,0.006025546027094964
+cat__DeviceProtection_No internet service,0.005995578490203885
+cat__TechSupport_No internet service,0.005892640997608475
+cat__StreamingMovies_No,0.005772432343425298
+cat__Partner_Yes,0.005757084053530551
+cat__Partner_No,0.005700669925971038
+cat__StreamingTV_No,0.005619206005271438
+cat__OnlineBackup_No internet service,0.0055963808564524365
+cat__DeviceProtection_No,0.005307045911484584
+cat__OnlineSecurity_No internet service,0.0051379248913156015
+cat__PaymentMethod_Bank transfer (automatic),0.004981880623938455
+cat__StreamingMovies_No internet service,0.004794454288474835
+cat__PaymentMethod_Credit card (automatic),0.00468968107293703
+cat__InternetService_No,0.004674713480407309
+cat__StreamingTV_No internet service,0.004592060783945663
+cat__DeviceProtection_Yes,0.004206385707077123
+cat__PaymentMethod_Mailed check,0.0041624043253082966
+cat__PhoneService_Yes,0.002099597058647546
+cat__PhoneService_No,0.0020572354739489132
+cat__MultipleLines_No phone service,0.002006545338072381
