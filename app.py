@@ -61,6 +61,11 @@ if st.button("Predict Churn Risk"):
     explainer = shap.LinearExplainer(classifier, input_transformed)
     shap_values = explainer.shap_values(input_transformed)
     
-    fig, ax = plt.subplots()
-    shap.bar_plot(shap_values[0], feature_names=feature_names, max_display=10, show=False)
+       # Clean up feature names for a better display
+    clean_names = [name.replace('num__', '').replace('cat__', '') for name in feature_names]
+    
+    fig, ax = plt.subplots(figsize=(10, 5))
+    # max_display=6 shows only the top 6 most important features (thicker bars!)
+    shap.bar_plot(shap_values[0], feature_names=clean_names, max_display=6, show=False)
+    plt.tight_layout()
     st.pyplot(fig)
