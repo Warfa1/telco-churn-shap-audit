@@ -3,6 +3,7 @@ import pandas as pd
 import joblib
 import shap
 import matplotlib.pyplot as plt
+import urllib.request
 
 st.set_page_config(page_title="Churn Predictor", layout="wide")
 
@@ -13,10 +14,24 @@ It also uses **SHAP** to explain *why* the model made that prediction.
 """)
 
 @st.cache_resource
-def load_model():
-    return joblib.load('lr_model.pkl')
+def load_model_and_data():
+    # 1. Load the trained model
+    model = joblib.load('lr_model.pkl')
+    
+    # 2. Download the dataset to use as SHAP background data
+    url = "https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv"
+    df = pd.read_csv(url)
+    df = df.drop(columns=['customerID'])
+    df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
+    df = df.dropna(subset=['TotalCharges'])
+    df['Churn'] = df['Churn'].map({'No': 0, 'Yes': 1})
+    
+    # Take a small sample for background
+    X_background = df.drop(columns=['Churn']).head(100)
+    
+    return model, X_background
 
-model = load_model()
+model, background_data = load_model_and_data()
 
 st.sidebar.header("Customer Information")
 tenure = st.sidebar.slider("Tenure (Months)", 0, 72, 12)
@@ -27,6 +42,7 @@ internet = st.sidebar.selectbox("Internet Service", ['DSL', 'Fiber optic', 'No']
 
 if st.button("Predict Churn Risk"):
     
+    # Create the input dataframe with the selected values
     input_data = {
         'gender': ['Female'], 'SeniorCitizen': [0], 'Partner': ['No'], 'Dependents': ['No'],
         'tenure': [tenure], 'PhoneService': ['Yes'], 'MultipleLines': ['No'],
@@ -38,8 +54,11 @@ if st.button("Predict Churn Risk"):
     }
     
     input_df = pd.DataFrame(input_data)
+    
+    # Make the prediction
     prob = model.predict_proba(input_df)[0, 1]
     
+    # Display the result
     st.subheader("Prediction Results")
     col1, col2 = st.columns(2)
     with col1:
@@ -52,20 +71,23 @@ if st.button("Predict Churn Risk"):
             
     st.subheader("Why did the model make this prediction?")
     
+    # Prepare data for SHAP
     preprocessor = model.named_steps['prep']
     classifier = model.named_steps['clf']
     
     input_transformed = preprocessor.transform(input_df)
-    feature_names = preprocessor.get_feature_names_out()
+    bg_transformed = preprocessor.transform(background_data)
     
-    explainer = shap.LinearExplainer(classifier, input_transformed)
+    # Clean up feature names for a better display
+    raw_names = preprocessor.get_feature_names_out()
+    clean_names = [name.replace('num__', '').replace('cat__', '') for name in raw_names]
+    
+    # Calculate SHAP values using the background data
+    explainer = shap.LinearExplainer(classifier, bg_transformed)
     shap_values = explainer.shap_values(input_transformed)
     
-       # Clean up feature names for a better display
-    clean_names = [name.replace('num__', '').replace('cat__', '') for name in feature_names]
-    
+    # Plot the SHAP bar chart
     fig, ax = plt.subplots(figsize=(10, 5))
-    # max_display=6 shows only the top 6 most important features (thicker bars!)
-    shap.bar_plot(shap_values[0], feature_names=clean_names, max_display=6, show=False)
+    shap.bar_plot(shap_values[0], feature_names=clean_names, max_display=8, show=False)
     plt.tight_layout()
     st.pyplot(fig)
