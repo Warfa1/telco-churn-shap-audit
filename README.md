@@ -49,4 +49,4 @@ This project predicts customer churn on the IBM Telco Customer Churn dataset usi
 3. Run all cells in order (~5 minutes on free CPU)
 
 ## Author
-Yusuf abdinsir warfa
+Yusuf abdinasir warfa
