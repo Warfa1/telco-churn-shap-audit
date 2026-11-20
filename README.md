@@ -3,6 +3,8 @@
 ## Overview
 This project predicts customer churn on the IBM Telco Customer Churn dataset using Logistic Regression and Random Forest. It addresses two research questions:
 
+live: https://telco-churn-shap-audit.streamlit.app
+
 1. **RQ1:** Do Logistic Regression and Random Forest agree on SHAP feature importance rankings, and is that agreement stable across random seeds?
 2. **RQ2:** Under a leakage-free pipeline, how do SMOTE, class_weight, and no imbalance handling differ in Recall, F1, and ROC-AUC — and how much inflation does pre-split SMOTE produce?
 
